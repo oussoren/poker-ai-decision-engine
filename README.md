@@ -23,10 +23,11 @@ This project is currently in the "Intelligence Integration" phase. The base game
 * [ ] **GTO Approximation:** Refining the decision engine to approximate Nash Equilibrium strategies in heads-up scenarios.
 
 ### Building & Running
-This project is built as a standalone C++ application. Since the project files are currently in a flat directory, you can compile everything using a wildcard command.
+This project uses the Qt framework.
 
 **Prerequisites:**
-* `g++` (GCC) compiler
+* Qt 5 or Qt 6
+* qmake (usually installed with Qt)
 
 **Compilation:**
 ```bash
@@ -36,8 +37,11 @@ git clone [https://github.com/oussoren/poker-ai-decision-engine.git](https://git
 # Navigate to directory
 cd poker-ai-decision-engine
 
-# Compile all source files
-g++ -std=c++17 -o poker_engine *.cpp
+# Generate Makefile from project file
+qmake pk_bot.pro
 
-# Run the simulation
-./poker_engine
+# Compile
+make
+
+# Run
+./pk_bot
